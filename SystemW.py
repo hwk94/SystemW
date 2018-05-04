@@ -12,3 +12,4 @@ s.bind(('ens33',3))
 while True:
     message = s.recv(1024)
     print(repr(message)
+    print(message.hex())
