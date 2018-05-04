@@ -7,7 +7,7 @@ s = socket.socket (
   
 )
 
-s.bind(('ens0',3))
+s.bind(('ens33',3))
 
 while True:
     message = s.recv(1024)
