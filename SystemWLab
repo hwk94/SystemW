@@ -1,0 +1,18 @@
+import socket
+
+s = socket.socket(
+        socket.AF_PACKET,
+        socket.SOCK_RAW,
+        socket.htons(3)
+
+)
+
+trame_ethernet = s.bind(('ens33', 3))
+
+while True:
+    message = s.recvfrom(65535)
+    mac_dest,   mac_src, prot,  donnes = trame_ethernet(message)
+
+print('trame ethernet:')
+print (TAB_1 + 'Destination: {}, Source: {} Source: {}, Protocol: {]'.format(mac_dest, mac_src, prot,))
+print(repr(message))    
